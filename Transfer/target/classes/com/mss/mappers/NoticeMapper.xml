@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- namespace必须是对应接口的地址 -->
+<mapper namespace="com.mss.mappers.NoticeMapper">
+    <!-- 添加新公告 -->
+    <insert id="addNewNotice" useGeneratedKeys="true" parameterType="com.mss.models.Notice">
+        insert into notice (noticetitle,noticetime,noticebody) values (#{noticetitle},#{noticetime},#{noticebody})
+    </insert>
+
+    <!-- 查询所有公告 -->
+    <select id="selectAllNotice" resultType="com.mss.models.Notice">
+        select * from notice
+    </select>
+
+    <!-- 根据id号查询公告 -->
+    <select id="selectNoticeById" resultType="com.mss.models.Notice" parameterType="int">
+        select * from notice where noticeid=#{noticeid}
+    </select>
+
+    <!-- 修改公告 -->
+    <update id="updateNoticeById" parameterType="com.mss.models.Notice">
+        update notice set noticetitle=#{noticetitle},noticetime=#{noticetime},noticebody=#{noticebody} where noticeid=#{noticeid}
+    </update>
+
+    <!--删除公告-->
+    <delete id="deleteNoticeById" parameterType="int">
+        delete from notice where noticeid=#{noticeid}
+    </delete>
+</mapper>

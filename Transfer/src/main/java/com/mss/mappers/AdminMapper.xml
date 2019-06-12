@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- namespace必须是对应接口的地址 -->
+<mapper namespace="com.mss.mappers.AdminMapper">
+    <!-- 查询所有管理员信息 -->
+    <select id="selectAllAdmin" resultType="com.mss.models.Admin">
+        select * from admin
+    </select>
+
+    <!-- 查询所有管理员信息 -->
+    <select id="selectAllCkAdmin" resultType="com.mss.models.Admin">
+        select * from admin
+    </select>
+
+    <!-- 根据id查询管理员信息 -->
+    <select id="selectAdminById" resultType="com.mss.models.Admin" parameterType="int">
+        select * from admin where ckid=#{ckid}
+    </select>
+
+
+</mapper>

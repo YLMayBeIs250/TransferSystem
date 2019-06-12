@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- namespace必须是对应接口的地址 -->
+<mapper namespace="com.mss.mappers.UserMapper">
+    <!-- 查询用户信息用于登录 -->
+    <select id="selectAllUser" resultType="com.mss.models.User">
+        select * from user
+    </select>
+
+    <!-- 根据id号查询用户信息 -->
+    <select id="selectUserById" resultType="com.mss.models.User" parameterType="int">
+        select * from user where id=#{id}
+    </select>
+
+    <!-- 用户基本信息注册 -->
+    <insert id="addUser" useGeneratedKeys="true" parameterType="com.mss.models.User">
+        insert into user (useremail,username,password) values (#{useremail},#{username},#{password})
+    </insert>
+
+    <!-- 用户收货地址补充 -->
+    <insert id="addAddress" >
+        update user set city=#{id},location=#{location} where id=#{id}
+    </insert>
+
+    <!-- 用户收货地址删除 -->
+    <insert id="deleteAddress" >
+        update user set city=null,location=null where id=#{id}
+    </insert>
+
+    <!-- 修改用户基本信息 -->
+    <update id="updateUserInfo" parameterType="com.mss.models.User">
+        update user set username=#{username},password=#{password},useremail=#{useremail},telephone=#{telephone},wechat=#{wechat},city=#{city},location=#{location} where id=#{id}
+    </update>
+
+
+</mapper>

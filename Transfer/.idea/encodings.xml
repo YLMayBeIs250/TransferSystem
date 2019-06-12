@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding" addBOMForNewFiles="with NO BOM">
+    <file url="file://$PROJECT_DIR$" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/resources/mybatis/SqlMapConfig.xml" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/css" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/js" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/pages/HTML" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/pages/jsp" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/pages/jsp/fillorder.jsp" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/pages/jsp/shouhuo.jsp" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/pages/jsp/showorder.jsp" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/pages/jsp/update-bu.jsp" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/pages/jsp/warehouse.jsp" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/theme" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/theme/img/user4.jpg" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/theme/js/jquery-1.4.2.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/theme/js/jquery-1.7.1.min.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/theme/layer-v3.1.1" charset="UTF-8" />
+  </component>
+</project>

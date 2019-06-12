@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- namespace必须是对应接口的地址 -->
+<mapper namespace="com.mss.mappers.OrderMapper">
+    <!-- 插入新订单信息 -->
+    <insert id="addOrder" parameterType="com.mss.models.Order">
+        insert into orders (orderid,ckid,id,ordertime,ordermessage,orderhref,orderstate) values (#{orderid},#{ckid},#{id},#{ordertime},#{ordermessage},#{orderhref},#{orderstate})
+    </insert>
+
+    <!--根据订单号查询未支付订单信息-->
+    <select id="selectOrderByOrderId" parameterType="String" resultType="com.mss.models.Order">
+        select * from orders where orderid=#{orderid}
+    </select>
+
+    <!--根据订单号查询已支付订单信息-->
+    <select id="selectPayOrderByOrderId" parameterType="String" resultType="com.mss.models.Order">
+        select * from orders where orderid=#{orderid}
+    </select>
+
+    <!--根据仓库号查询订单信息-->
+    <select id="selectOrderByCkId" parameterType="int" resultType="com.mss.models.Order">
+        select * from orders where ckid=#{ckid}
+    </select>
+
+    <!--根据用户id号查询订单信息-->
+    <select id="selectOrderByUserId" parameterType="int" resultType="com.mss.models.Order">
+        select * from orders where id=#{id}
+    </select>
+
+    <!--查询所有订单信息-->
+    <select id="selectAllOrder" resultType="com.mss.models.Order">
+        select * from orders
+    </select>
+
+    <!--删除订单-->
+    <delete id="deleteOrderByOrderId" parameterType="String">
+        delete from orders where orderid=#{orderid}
+    </delete>
+
+    <!--支付订单-->
+    <update id="payOrderByOrderId" parameterType="com.mss.models.Order">
+        update orders set orderstate=#{orderstate} where orderid=#{orderid}
+    </update>
+
+    <!--支付订单-->
+    <update id="addInfoIntoOrder" parameterType="com.mss.models.Order">
+        update orders set orderweight=#{orderweight},orderprice=#{orderprice} where orderid=#{orderid}
+    </update>
+
+</mapper>
